@@ -1,0 +1,41 @@
+body {
+  $Space: 10px;
+  padding: 0 $Space;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: $Space;
+  grid-template-areas:
+    "Header"
+    "Main"
+    "Footer";
+  header {
+    grid-area: Header;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main {
+    grid-area: Main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    grid-area: Footer;
+    display: flex;
+    justify-content: center;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
