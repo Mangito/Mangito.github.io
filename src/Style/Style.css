@@ -5,6 +5,7 @@ body {
   grid-template-rows: auto 1fr auto;
   gap: 10px;
   grid-template-areas: "Header" "Main" "Footer";
+  background-color: #ddd;
 }
 
 body header {
@@ -17,8 +18,99 @@ body header {
 body main {
   grid-area: Main;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body main button {
+  width: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px black;
+  background: none;
+  transition: 0.5s;
+}
+
+body main button::before, body main button::after {
+  content: "";
+  width: 0;
+  top: 0;
+  position: absolute;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+
+body main button:hover {
+  background: white;
+}
+
+body main button:hover:first-child {
+  transform: rotateX(20deg) rotateY(20deg) scale(1.1);
+}
+
+body main button:hover:first-child::after {
+  width: 100%;
+  height: 100%;
+  right: 0;
+  background-color: rgba(144, 239, 252, 0.5);
+}
+
+body main button:hover:last-child {
+  transform: rotateX(-20deg) rotateY(20deg) scale(1.1);
+}
+
+body main button:hover:last-child::before {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: rgba(144, 239, 252, 0.5);
+}
+
+body main button:active {
+  transform: scale(0.95);
+}
+
+body main div.Carousel,
+body main div.Slide {
+  width: 100%;
+  height: 100%;
+}
+
+body main div.Carousel div.Slide {
+  display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+}
+
+body main div.Carousel div.Slide a {
+  padding: 8px 10px;
+  color: #f00;
+  text-shadow: 1px 1px 1px #fff;
+  border: 2px solid #f00;
+  background: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+body main div.Carousel div.Slide a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff, 0 0 90px #fff, 0 0 100px #fff, 0 0 150px #fff;
+  background: black;
+  border: 2px solid #f00;
+  box-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 50px #f00;
+  transform: scale(1.1);
+}
+
+body main div.Carousel div.Slide a:active {
+  transform: scale(0.95);
 }
 
 body footer {
