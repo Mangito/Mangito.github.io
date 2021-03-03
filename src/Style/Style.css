@@ -15,6 +15,14 @@ body header {
   justify-content: center;
 }
 
+body header img {
+  position: fixed;
+  top: 0;
+  left: 10px;
+  width: 128px;
+  height: 128px;
+}
+
 body main {
   grid-area: Main;
   display: flex;
